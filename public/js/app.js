@@ -12,22 +12,84 @@
 // BEGIN CODE
 
 
+
+import { fibonacciStep, counterTop } from "./export.js";
+
+
+const counterBox = document.getElementById('counter-box-number').querySelector('p');
+const plusOrMinusSelect = document.getElementById('step-plus-or-minus-dropdown');
+
+
 // Submit Button Event
-document.getElementById('menu-form').addEventListener('submit', function(e) {
+document.getElementById('menu-submit-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     let timeDelay = document.getElementById('time-delay').value;
-    timeDelay = parseInt(timeDelay, 10);
+    timeDelay = parseFloat(timeDelay);
+
+    // timeDelay validation
+    if (isNaN(timeDelay) || timeDelay < 0.00001 || timeDelay > 1000000) {
+        alert('Please enter a valid time delay between 0.00001 and 1000000 seconds');
+        console.error('Entered invalid time delay: ', timeDelay, ' seconds', ' type: ', (typeof timeDelay));
+        return;
+    }
+
+    // fibonacci ?
+    counterTop(counterBox, timeDelay);
 });
 
 
-// Main Counter Function
-function counterTop(timeDelay) {
-    let counterBox = document.getElementById('counter-box-number').querySelector('p');
-    let counter = parseInt(counterBox.textContent);
+// Set Starting Value Button Click Event
+document.getElementById('set-starting-value-button').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-    setInterval(() => {
-        counter++;
-        counterBox.textContent = counter;
-    }, timeDelay);
-}
+    let startingValue = document.getElementBydId('starting-value').value;
+    startingValue = parseFloat(startingValue);
+
+    // startingValue validation
+    if (isNaN(startingValue)) {
+        alert('Please enter a number for your starting value');
+        console.error('Entered invalid starting value: ', startingValue, ' type: ', (typeof startingValue));
+    }
+
+    return startingValue;
+});
+
+
+// Set Ending Value Button Click Event
+document.getElementById('set-ending-value-button').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let endingValue = document.getElementBydId('ending-value').value;
+    endingValue = parseFloat(endingValue);
+
+    // startingValue validation
+    if (isNaN(endingValue)) {
+        alert('Please enter a number for your ending value or select skip');
+        console.error('Entered invalid starting value: ', startingValue, ' type: ', (typeof startingValue));
+    }
+
+    return startingValue;
+});
+
+
+// Set Counter Step Functionality Button Click Event
+document.getElementById('set-counter-step-button').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let plusOrMinus = plusOrMinusSelect.value;
+
+    if (plusOrMinus == '+') {
+        increase == true;
+    } else if (plusOrMinus = '-') {
+        decrease == true;
+    } else if (plusOrMinus == '') {
+        alert('Please select "+" or "-" befrore setting counter step');
+        return;
+    } else {
+        console.error('Unexpected value parsed from #step-plus-or-minus-dropdown; terminating DOM event for this button');
+        return;
+    }
+
+    console.log('increase = ', increase, ' , decrease = ', decrease);
+});

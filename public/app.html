@@ -24,42 +24,76 @@
                 </div>
             </div>
             <div id="user-input-box" class="outer-box">
-                <form id="menu-form">
-                    <div id="user-input-box-title-row" class="inner-box box-row spacing">
-                        <h2>Menu</h2>
+                <div id="user-input-box-title-row" class="inner-box box-row spacing">
+                    <h2>Menu</h2>
+                </div>
+                <div id="menu-container" class="menu-inner-box">
+                    <div class="menu-row top-border bottom-border">
+                        <form id="menu-starting-value">
+                            <label for="starting-value">Starting Value</label>
+                            <input id="starting-value" name="time" step="1" value="1">
+                            <button id="set-starting-value-button">Set</button>
+                        </form>
                     </div>
-                    <div id="menu-container" class="inner-box">                    
-                        <div class="menu-row">
-                            <div class="menu-selector-row">
-                                <label for="time-delay">Time Delay (ms)</label>
+                    <div class="menu-row top-border bottom-border">
+                        <form id="menu-ending-value">
+                            <label for="ending-value">End Value</label>
+                            <input id="ending-value" name="time" step="1" value="1">
+                            <button id="set-ending-value-button">Set</button>
+                        </form>
+                    </div>          
+                    <div class="menu-row top-border bottom-border">
+                        <label for="time-delay">Time Delay (s)</label>
+                        <input id="time-delay" name="time" step="1" min="0" type="number" value="1000">
+                    </div>
+                    <div class="menu-row top-border bottom-border">
+                        <label for="counter-function-dropdown">
+                            Function
+                        </label>
+                        <select id="counter-function-dropdown">
+                            <option value="" id="function-default" class="counter-function-dropdown-values"></option>
+                            <option value="infinite" id="function-infinite" class="counter-function-dropdown-values">Infinite</option>
+                            <option value="defined stop" id="function-defined-stop" class="counter-function-dropdown-values">Defined Stop</option>
+                            <option value="alarm" id="function-alarm" class="counter-function-dropdown-values">Alarm</option>
+                            <option value="stopwatch" id="function-stopwatch" class="counter-function-dropdown-values">Stopwatch</option>
+                        </select>
+                    </div>
+                    <div class="menu-row top-border bottom-border">
+                        <form id="step-form">
+                            <div id="step-row-1">
+                                <label>Step</label>
                             </div>
-                            <div class="menu-input-row">
-                                <input id="time-delay"  name="time" min="0.01" default="1000" type="number">
-                            </div>
-                        </div>
-                        <div class="menu-row">
-                            <div class="menu-selector-row">
-                                <label for="counter-function-dropdown">
-                                    <p>Function</p>
-                                </label>
-                            </div>
-                            <div class="menu-input-row">
-                                <select id="counter-function-dropdown">
-                                    <option value="" id="function-default" class="counter-function-dropdown-values"></option>
-                                    <option value="infinite" id="function-infinite" class="counter-function-dropdown-values">Infinite</option>
-                                    <option value="defined stop" id="function-defined-stop" class="counter-function-dropdown-values">Defined Stop</option>
-                                    <option value="alarm" id="function-alarm" class="counter-function-dropdown-values">Alarm</option>
-                                    <option value="stopwatch" id="function-stopwatch" class="counter-function-dropdown-values">Stopwatch</option>
+                            <div id="step-row-2">
+                                <select id="step-plus-or-minus-dropdown">
+                                    <option value="" id="step-plus-or-minus-default" class="step-plus-or-minus-values"></option>
+                                    <option value="+" id="step-plus" class="step-plus-or-minus-values">+</option>
+                                    <option value="-" id="step-minus" class="step-plus-or-minus-values">-</option>
+                                </select>
+                                <select id="step-iteration-dropdown">
+                                    <option value="" id="step-iteration-default" class="step-iteration-values"></option>
+                                    <option value="integer" id="step-iteration-integer" class="step-iteration-values">Integer</option>
+                                    <option value="decimal" id="step-iteration-decimal" class="step-iteration-values">Decimal</option>
+                                    <option value="fibonacci" id="step-iteration-fibonacci" class="step-iteration-values">Fibonacci</option>
+                                    <option value="algebraic" id="step-iteration-algebraic" class="step-iteration-values">Algebraic</option>
                                 </select>
                             </div>
-                            <div id="menu-submit-button-row" class="menu-row">
-                                <button id="submit-button" type="submit">Start</button>
-                            </div>
-                        </div>
-                    </form>
+                            <button id="set-counter-step-button">Set</button>
+                        </form>
+                    </div>
+                    <div id="menu-submit-button-row" class="menu-row top-border">
+                        <form id="menu-submit-form">
+                            <button id="submit-button" type="submit">Start</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <script src="./js/app.js" type="module"></script>
+        <script src="./js/app.js" type="module" defer></script>
     </body>
 <html>
+
+<!--
+* checkbox to show program data when complete
+* logic to check if start value will ever reach end value
+* select (endingValue || skipEndingValue) 
+-->
