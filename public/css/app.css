@@ -63,6 +63,7 @@ h1 {
     border-radius: 6px;
     background-color: #B7CDF7;
     box-shadow: 3px 5px 0 #030B60;
+    height: fit-content;
 }
 
 .inner-box {
@@ -75,18 +76,10 @@ h1 {
     border-radius: 6px;
     margin: 0 10px;
     background-color: #F0F0F0;
-
 }
 
 #user-input-box-title-row {
     justify-content: center;
-}
-
-.menu-column {
-    display: flex;
-    flex: 1;
-    height: 100%;
-
 }
 
 .menu-row {
@@ -103,6 +96,13 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: left;
+}
+
+.box-row {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 5px 0;
 }
 
 .spacing {
