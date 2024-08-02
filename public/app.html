@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CounterTop</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="A fun little number counter application">
+        <meta name="keywords" content="counter, alarm, JavaScript, JS, javascript, web app, software">
+        <meta name="author" content="Viihna Lehraine">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="./css/app.css">
+        <link rel="icon" type="img/svg+xml" href="./assets/favicons/favicon.svg">
+        <link rel="shortcut icon" type="image/png" size="16x16" href="./assets/favicons/favicon-android-chrome.png">
+    </head>
+    <body>
+        <div id="container">
+            <div id="title-box" class="outer-box">
+                <div id="title-box-text-container-box" class="inner-box">
+                    <h1>CounterTop</h1>
+                </div>
+            </div>
+            <div id="counter-box" class="outer-box">
+                <div id="counter-box-number" class="inner-box">
+                    <p>1</p>
+                </div>
+            </div>
+            <div id="user-input-box" class="outer-box">
+                <form id="menu-form"></form>
+                    <div id="user-input-box-title-row" class="inner-box box-row spacing">
+                    <h2>Menu</h2>
+                    </div>
+                    <div id="menu-container" class="inner-box">                    
+                        <div class="box-row menu-column">
+                            <div class="menu-row">
+                                <div class="menu-selector-row">
+                                    <label for="time-delay">Time Delay (ms)</label>
+                                </div>
+                                <div class="menu-input-row">
+                                    <input id="time-delay"  name="time" min="0.01" default="1000" type="number">
+                                </div>
+                            </div>
+                            <div class="menu-row">
+                                <div class="menu-selector-row">
+                                    <label for="counter-function-dropdown">
+                                        <p>Function</p>
+                                    </label>
+                                </div>
+                                <div class="menu-input-row">
+                                    <select id="counter-function-dropdown">
+                                        <option value="" id="function-default" class="counter-function-dropdown-values"></option>
+                                        <option value="infinite" id="function-infinite" class="counter-function-dropdown-values">Infinite</option>
+                                        <option value="defined stop" id="function-defined-stop" class="counter-function-dropdown-values">Defined Stop</option>
+                                        <option value="alarm" id="function-alarm" class="counter-function-dropdown-values">Alarm</option>
+                                        <option value="stopwatch" id="function-stopwatch" class="counter-function-dropdown-values">Stopwatch</option>
+                                    </select>
+                                </div>
+                                <div class="menu-row">
+                                    <div id="menu-submit-button-row" class="menu-row">
+                                        <button id="submit-button" type="submit">Start</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="./js/app.js" type="module"></script>
+    </body>
+<html>

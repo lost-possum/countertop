@@ -1,6 +1,6 @@
-// CounterTop - version 0.0
+// CounterTop - version 0.0.1-alpha
 
-// Author: Viihna Leraine (reach me at viihna@voidfucker.com / viihna.78 (Signal) / Lost-Possum (Github))
+// Author: Viihna Leraine (reach me at viihna@ViihnaTech.com / viihna.78 (Signal) / Viihna-Lehraine (Github))
 
 // Licensed under GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.html)
 
@@ -12,20 +12,22 @@
 // BEGIN CODE
 
 
-
-// Initialize app once DOM content is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    infiniteCounter();
+// Submit Button Event
+document.getElementById('menu-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let timeDelay = document.getElementById('time-delay').value;
+    timeDelay = parseInt(timeDelay, 10);
 });
 
 
-// Infinite Counter Function
-function infiniteCounter() {
+// Main Counter Function
+function counterTop(timeDelay) {
     let counterBox = document.getElementById('counter-box-number').querySelector('p');
     let counter = parseInt(counterBox.textContent);
 
     setInterval(() => {
         counter++;
         counterBox.textContent = counter;
-    }, 1000); // Update every second
+    }, timeDelay);
 }

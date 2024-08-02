@@ -1,6 +1,6 @@
-Countertop - version v0.0.1-alpha
+CounterTop - version v0.0.1-alpha
 
-Author: Viihna Leraine (reach me at viihna@voidfucker.com / viihna.78 (Signal) / Viihna-Lehraine (Github))
+Author: Viihna Leraine (reach me at viihna@viihnatech.com / viihna.78 (Signal) / Viihna-Lehraine (Github))
 
 Licensed under GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.html)
 
